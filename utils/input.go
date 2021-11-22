@@ -8,8 +8,10 @@ import (
 	"strings"
 )
 
-func MustReadfile(day int) string {
-	filename := fmt.Sprintf("day%02d/input.txt", day)
+// MustReadFile reads input file provided by Advent of Code website.
+// If it fails to read file, it panics an error message.
+func MustReadFile(day int) string {
+	filename := fmt.Sprintf("day%d/input.txt", day)
 	file, err := os.Open(filename)
 	PanicError(err)
 	defer file.Close()
