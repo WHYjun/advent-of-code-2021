@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -21,4 +22,16 @@ func MustReadFile(day int) string {
 	PanicError(err)
 
 	return strings.TrimSuffix(string(contents), "\n")
+}
+
+// MustConvertLinesToIntegerList iterates a list of string to integer list.
+// If it fails to convert string to integer, it panics an error message.
+func MustConvertLinesToIntegerList(lines []string) []int {
+	var numbers []int
+	for _, line := range lines {
+		number, err := strconv.Atoi(line)
+		PanicError(err)
+		numbers = append(numbers, number)
+	}
+	return numbers
 }
