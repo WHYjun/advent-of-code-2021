@@ -10,6 +10,7 @@ import (
 	"github.com/WHYjun/advent-of-code-2021/day03"
 	"github.com/WHYjun/advent-of-code-2021/day04"
 	"github.com/WHYjun/advent-of-code-2021/day05"
+	"github.com/WHYjun/advent-of-code-2021/day06"
 	"github.com/WHYjun/advent-of-code-2021/utils"
 )
 
@@ -33,6 +34,9 @@ func main() {
 	case 5:
 		fmt.Printf("part 1: %d\n", day05.Part1(utils.MustReadFile(day)))
 		fmt.Printf("part 2: %d\n", day05.Part2(utils.MustReadFile(day)))
+	case 6:
+		fmt.Printf("part 1: %d\n", day06.Part1(utils.MustReadFile(day)))
+		fmt.Printf("part 2: %d\n", day06.Part2(utils.MustReadFile(day)))
 	default:
 		utils.PanicError(fmt.Errorf("no such day: %d", day))
 	}
