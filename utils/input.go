@@ -35,3 +35,17 @@ func MustConvertLinesToIntegerSlice(lines []string) []int {
 	}
 	return numbers
 }
+
+func ConvertInputToIntSlices(input string) [][]int {
+	lines := strings.Split(input, "\n")
+	var intSlices [][]int
+	for _, line := range lines {
+		var intSlice []int
+		for _, char := range line {
+			val, _ := strconv.Atoi(string(char))
+			intSlice = append(intSlice, val)
+		}
+		intSlices = append(intSlices, intSlice)
+	}
+	return intSlices
+}
